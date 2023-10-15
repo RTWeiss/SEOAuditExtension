@@ -1,0 +1,249 @@
+body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.app-container {
+    padding: 15px;
+    max-width: 590px;
+}
+
+header {
+    color: #854DFB;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+#sourceSection pre#pageSource {
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 600px;  /* or whatever maximum height you prefer */
+}
+#internalLinksTable tbody td {
+    word-break: break-word;
+}
+
+h1, h2 {
+    margin: 0;
+    font-weight: 700;
+}
+
+nav {
+    margin: 15px 0;
+}
+.nav-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Provides space between buttons */
+}
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    background-color: #854DFB;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6733c1;
+}
+.info-tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; 
+    cursor: help; 
+    color: #0056b3;
+    text-decoration: underline;
+    margin-left: 10px;
+}
+
+.info-tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; 
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.info-tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.data-card {
+    background-color: #FFFFFF;
+    border: 1px solid #854DFB;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.data-card h2 {
+    color: #854DFB;
+    font-size: 16px;
+}
+
+.data-card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.headings-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Adjusted for 4 heading levels */
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#headingsList {
+    list-style: none;
+    padding: 0;
+}
+
+#headingsList li {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+#headingsList li.h1 {
+    font-weight: bold;
+}
+
+#headingsList li.h2 {
+    margin-left: 10px;
+}
+
+#headingsList li.h3 {
+    margin-left: 20px;
+}
+
+#headingsList li.h4 {
+    margin-left: 30px;
+}
+
+/* Tooltip CSS */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: #854DFB;
+    border-bottom: 1px dotted #854DFB;
+        white-space: nowrap;  /* Prevent text inside the tooltip from breaking into multiple lines */
+    position: absolute;
+    text-decoration: underline;
+}
+.tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    background-color: #4A90E2;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; 
+    left: 50%;
+    margin-left: -110px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #854DFB;
+    color: #FFFFFF;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    font-size: 0.8em;
+    left: 75px;
+
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 280px;
+    background-color: #6c757d;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the text */
+    left: 50%; /* Center the tooltip */
+    margin-left: -140px; /* Use half of the width to offset the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tooltip:hover .tooltiptext {
+    top: -30px;
+    visibility: visible;
+    left: 75px;
+
+}
+
+.tooltip:hover::before {
+    opacity: 1;
+    left: 75px;
+}
+.green {
+    color: #28A745;
+}
+
+.red {
+    color: #DC3545;
+}
+#internalLinksList {
+    margin: 10px 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.internal-link-item {
+    margin: 8px 0;
+}
+
+.internal-link-item a {
+    color: #4685B7;
+    text-decoration: none;
+}
+
+.internal-link-item a:hover {
+    text-decoration: underline;
+}
+.tab-content {
+    display: none;
+}

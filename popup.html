@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>SEO Audit Dashboard</title>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>SEO Audit Dashboard</h1>
+        </header>
+        <nav class="nav-buttons-container">
+            <button id="overviewBtn" class="button">Overview</button>
+            <button id="trackingCodesBtn" class="button">Site Info</button>
+            <button id="headingsBtn" class="button">Headings</button>
+            <button id="contentBtn" class="button">Content</button>
+            <button id="internalLinksBtn" class="button">Internal Links</button>
+        </nav>
+        <section id="overviewSection" class="active section">
+            <div class="data-card">
+                <h2>URL</h2>
+                <p id="titleInfo">
+                    <span id="urlText"></span>
+                </p>
+            </div>
+            <div class="data-card">
+                <h2>Title Tag</h2>
+                <p id="titleInfo">
+                    <span id="titleText"></span>
+                </p>
+                <p id="titleInfo">
+                    (<span id="titleCharCount"></span> characters)
+                    <span id="titleTooltip" class="tooltip">&nbspInfo</span>
+                </p>
+            </div>
+            <div class="data-card">
+                <h2>Meta Description</h2>
+                <p id="descInfo">
+                    <span id="descText"></span> 
+                </p>
+                <p id="descInfo">
+                (<span id="metaDescCharCount"></span> characters) 
+                <span id="descTooltip" class="tooltip">&nbspInfo</span>
+            </p>
+            </div>
+            <!-- Indexing & Robots.txt Section -->
+            <div class="data-card" id="indexingInfo">
+                <h3>Indexing</h3>
+                <p id="isIndexed">Indexed</p>
+                <h3>Robots.txt</h3>
+                <p id="robotsTxtP">
+                    <a href="#" target="_blank" id="robotsTxtLink">robots.txt</a> 
+                </p>
+            </div>          
+        </section>
+        <!-- New Section for Tracking Codes -->
+        <section id="trackingCodesSection" class="section">
+            <div class="data-card">
+            <center><h1>Tracking Codes</h1></center>
+                <ul id="trackingCodesList"></ul>
+            </div>
+        <!-- CMS Information -->
+            <div class="data-card">
+                <center><h1>Site Info</h1></center>
+                <h2>CMS: <span id="cmsName">Not Found</span></h2>
+                <h2>Theme: <span id="themeName">Not Found</span></h2>
+            </div>
+        </section>
+        <!-- Headings Section -->
+        <section id="headingsSection" class="section">
+            <center><h2>Heading Count</h2></center>
+            &nbsp;
+            <div id="headingsInfo" class="headings-grid">
+                <div class="data-card">
+                    <center><h3>H1 Count</h3></center>
+                    <center><p id="h1Count"></p></center>
+                </div>
+                <div class="data-card">
+                    <center><h3>H2 Count</h3></center>
+                    <center><p id="h2Count"></p></center>
+                </div>
+                <div class="data-card">
+                    <center><h3>H3 Count</h3></center>
+                    <center><p id="h3Count"></p></center>
+                </div>
+                <div class="data-card">
+                    <center><h3>H4 Count</h3></center>
+                    <center><p id="h4Count"></p></center>
+                </div>
+            </div>
+            <center><h1>Heading Hierarchy</h1></center>
+            &nbsp;
+            <div class="data-card">
+            <ul id="headingsList"></ul>
+        </div>
+        <center><button id="exportBtn" class="button active">Export Headings</button></center>
+        </section>
+        <!-- Content Section -->
+        <section id="contentSection" class="section">
+            <center><h2>Page Content</h2></center>
+            &nbsp;
+            <div class="data-card">
+            <p id="pageContent"></p> <!-- Element to display the page content -->
+            </div>
+            <center><button id="exportContentBtn" class="button active">Export Content</button></center>
+        </section>
+        <!-- Internal Links Section -->
+        <section id="internalLinksSection" style="display:none;" class="section">
+            <center><h2>Internal Links</h2></center>
+            &nbsp;
+            <div class="data-card" id="internalLinksInfo">
+                <p>Total Internal Links: <span id="internalLinksCount">0</span></p>
+            </div>
+            <div class="data-card">
+                <table id="internalLinksTable">
+                    <thead>
+                        <tr>
+                            <th>Link Text</th>
+                            <th>Link URL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Internal links will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <center><button id="exportInternalLinksBtn" class="button active">Export Links</button></center>
+        </section>
+        <!-- Page Source -->
+        <section id="sourceSection" class="section">
+            <center><h2>Page Source</h2></center>
+            &nbsp;
+            <div class="data-card">
+                <pre id="pageSource">Loading...</pre>
+            </div>
+            <center><button id="exportSourceBtn" class="button active">Export Page Source</button></center>
+        </section>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
+ 
